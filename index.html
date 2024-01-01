@@ -4,10 +4,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fan's speech-to-text basic demo</title>
         <style>
+            .input-form {
+                display: flex;
+                flex-direction: column;
+            }
         </style>
     </head>
 
     <body>
+        <div class="input-form">
+            <textarea id="text-area" name="text-area" placeholder="Enter text here"></textarea>
+            <select id="select-voice"></select>
+            <button id="submit-text">Submit text</button>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
