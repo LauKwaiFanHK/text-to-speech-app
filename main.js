@@ -27,7 +27,7 @@ const populateVoices = (voices) => {
     });
 };
 
-const getVoices = () => {
+const loadVoices = () => {
     myVoices = new Promise((resolve, reject) => {
         /**  
          * When a page is loaded, it takes time to populate the voices array as it is done asynchronously.
@@ -47,9 +47,11 @@ const getVoices = () => {
     });
 };
 
-getVoices();
+loadVoices();
 
 const createSpeech = () => {
+    if (speechService.speaking) return;
+
     const text = inputText.value;
     if (text !== '') {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -60,7 +62,7 @@ const createSpeech = () => {
             console.error(error);
         }
 
-        const selectedVoiceName = voiceSelector[0].getAttribute("data-name");
+        const selectedVoiceName = voiceSelector.selectedOptions[0].getAttribute("data-name");
 
         const selectedVoice = myVoices?.find((voice) => voice.name === selectedVoiceName);
         
@@ -77,3 +79,4 @@ inputForm.onsubmit = (e) => {
     createSpeech();
 };
   
+voiceSelector.onchange = (createSpeech);
