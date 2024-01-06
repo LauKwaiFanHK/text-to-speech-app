@@ -16,7 +16,7 @@
     - handle changing voice option
     - use [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) [SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) to utter the submitted text.
 
-## features
+## Features
 - User can enter text, click on Submit text button to start uttering the text.
 - User can change the voice option.
 - When text is entered, changing voice option automatically re-utters the text.
